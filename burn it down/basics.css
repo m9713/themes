@@ -1,0 +1,276 @@
+/*tumblr controls*/
+
+iframe.tmblr-iframe{
+	z-index:99999999999999!important;
+	transform:scale(0.70);
+	transform-origin:100% 0;
+	-webkit-transform:scale(0.70);
+	-webkit-transform-origin:100% 0;
+	-o-transform:scale(0.70);
+	-o-transform-origin:100% 0;
+	-moz-transform:scale(0.70);
+	-moz-transform-origin:100% 0;
+	-ms-transform:scale(0.70);
+	-ms-transform-origin:100% 0;transition:0.3s;
+}
+
+/*html*/
+
+html{
+	word-wrap:break-word;
+	font-smoothing:antialiased;
+	-moz-osx-font-smoothing:antialiased;
+	-webkit-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	hing:grayscale;
+	cursor:default;
+}
+
+body{
+	margin:0;
+}
+
+/*link*/
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover{
+	text-decoration:none;
+	-moz-transition:0.3s ease-in;
+	-webkit-transition:0.3s ease-in;
+	-o-transition:0.3s ease-in;
+	transition:0.3s ease-in;
+}
+
+img{
+	border:none;
+	max-width:100%;
+	height:auto;
+}
+
+/*text*/
+
+pre{
+	white-space:pre-wrap;
+	white-space:0;
+	white-space:0;
+	white-space:0;
+	word-wrap:break-word;
+	font:normal 13px/normal 'Fira Code', monospace;
+}
+
+blockquote{
+	padding:0 0 0 15px;
+	margin:.5em 0;
+	border-left:2px solid rgb(var(--Text-Borders));
+}
+
+p{
+	margin:1em 0;
+}
+
+p:first-of-type{
+	margin-top:5px;
+}
+
+p:last-of-type{
+	margin-bottom:5px;
+}
+
+h1,
+h2,
+h3,
+h4{
+	font-size:1em;
+	margin:0;
+	padding:15px 0;
+	font-weight:500;
+}
+
+small,
+sub,
+sup{
+	font-size:inherit;
+	vertical-align:baseline;
+}
+
+b,
+strong{
+	font-weight:500;
+	color:rgb(var(--Accent));
+}
+
+em,
+i{
+	font-style:italic;
+	color:rgba(var(--Text),.9);
+}
+
+/*lists*/
+
+ol,
+ul{
+	list-style:none;
+	text-align:left;
+	padding:0;
+	margin:0;
+}
+
+ol li,
+ul li{
+	position:relative;
+	padding:.1em 0;
+}
+
+ol li{
+	counter-increment:list;
+}
+
+ol li:before,
+ul li:before{
+	display:inline-block;
+	vertical-align:baseline;
+	margin-right:5px;
+}
+
+ol li:before{
+	content:counter(list, decimal-leading-zero) '.';
+}
+
+/*selection*/
+
+::selection{
+	color:rgb(var(--Selection-Content));
+	background-color:rgb(var(--Selection-Background));
+}
+
+::-moz-selection{
+	color:rgb(var(--Selection-Content));
+	background-color:rgb(var(--Selection-Background));
+}
+
+/*post*/
+
+#media a:before,
+#media a:after{
+	display:none;
+}
+
+#media a{
+	background:none;
+	padding:0;
+	margin:0;
+	border:none;
+	text-decoration:none;
+}
+
+/*photosets*/
+
+.npf_row{
+	display:flex!important;
+	margin:calc(var(--NPF-Image-Spacing) / -2)!important;
+	margin-bottom:calc(var(--NPF-Image-Spacing) / 2)!important;
+}
+
+.npf_row:last-of-type{
+	margin-bottom:calc(var(--NPF-Image-Spacing) / -2)!important;
+}
+
+.tmblr-full{
+	flex:1;
+	margin:0!important;
+	padding:calc(var(--NPF-Image-Spacing) / 2)!important;
+	width:auto!important;
+	height:auto!important;
+	outline:none;
+}
+
+/*lightbox*/
+ 
+#tumblr_lightbox, .tmblr-lightbox{
+  background-color:rgba(var(--Lightbox-Background),.95)!important;
+}
+
+#vignette, .vignette{
+  opacity:0;
+}
+
+#tumblr_lightbox img, .lightbox-image{
+  box-shadow:none!important;
+  border-radius:0!important;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  max-width:none;
+}
+
+#tumblr_lightbox_caption, .lightbox-caption{
+  visibility:hidden;
+}
+
+/*video*/
+
+.video{
+	display:block;
+	position:relative;
+}
+
+.video iframe{
+	display:block;
+	margin:auto;
+	max-width:calc(100% - 8px);
+}
+
+.tumblr_video_container{
+	display:block;
+	margin:auto;
+	max-width:calc(100% - 8px);
+}
+
+#youtube_iframe{
+	display:block;
+	margin:auto;
+	max-height:calc(100% * 0.67);
+	max-width:calc(100% - 8px);
+}
+
+.instagram-media{
+	max-height:none!important;
+}
+
+/*audio*/
+
+.soundcloud_audio_player,
+.spotify_audio_player,
+.audio-media .width_fix iframe{
+	width:100%!important;
+	margin:0;
+	margin-top:0;
+	margin-left:0;
+}
+
+.soundcloud_audio_player{
+	max-height:116px!important;
+}
+
+.spotify_audio_player{
+	max-height:80px!important;
+}
+
+.audio-media iframe.tumblr_audio_player{
+	height:85px!important;
+}
+
+/*credit*/
+
+credit{
+  background:url(https://static.tumblr.com/nuyvmrm/rmspygvrw/aurthms.png);
+  height:2em;
+  width:2em;
+  position:fixed;
+  z-index:15;
+  bottom:10px;
+  right:10px;
+  background-size:cover;
+}
