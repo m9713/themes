@@ -52,6 +52,7 @@
 <meta name="color:Post Permalink Background" content="#e68998"/>
 <meta name="color:Post Permalink Content" content="#ffffff"/>
 <meta name="color:Post Permalink Hover Content" content="#85144b"/>
+<meta name="color:Lightbox Background" content="#FFFFFF"/>
 
 <meta name="if:Show Tumblr Controls On Hover" content="0"/>
 <meta name="if:Dark Tumblr Controls" content="0"/>
@@ -83,6 +84,7 @@
 --NPF-Image-Spacing:4px;
 
 --Accent:{RGBcolor:Accent};
+--Lightbox-Background:{RGBcolor:Lightbox Background};
 --Selection-Background:{RGBcolor:Selection Background};
 --Selection-Content:{RGBcolor:Selection Content};
 --Text:{RGBcolor:Text};
