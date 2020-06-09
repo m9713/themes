@@ -1,0 +1,765 @@
+<!--
+
+
+    theme:      burn it down - header version
+    made by:    aurthms
+    
+
+-->
+
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+
+<title>{block:PostSummary}{PostSummary} &mdash; {/block:PostSummary}{block:TagPage}{lang:Posts tagged Tag} &mdash; {/block:TagPage}{block:SearchPage}{lang:Search results for SearchQuery} &mdash; {/block:SearchPage}{Title}</title>
+
+<link rel="shortcut icon" href="{favicon}">
+
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{block:Hidden}
+<!--Default Varibles-->
+<meta name="image:header" content=""/>
+
+<meta name="color:Accent" content="#39CCCC"/>
+<meta name="color:Background" content="#fafafa"/>
+<meta name="color:Borders" content="#e6e6e6"/>
+<meta name="color:Link" content="#4f4f4f"/>
+<meta name="color:Link Border" content="#e68998"/>
+<meta name="color:Selection Background" content="#FFE4B5"/>
+<meta name="color:Selection Content" content="#111111"/>
+<meta name="color:Scrollbar Thumb" content="#ADFF2F"/>
+<meta name="color:Text" content="#111111"/>
+
+<meta name="color:Navigation Link Background" content="#e9dbe3"/>
+<meta name="color:Navigation Link Color" content="#111111"/>
+
+<meta name="color:Content" content="#FFFFFF"/>
+<meta name="color:List Icon" content="#111111"/>
+<meta name="color:Audio Post Background" content="#997483"/>
+<meta name="color:Audio Post Content" content="#ffffff"/>
+<meta name="color:Link Post Background" content="#dddddd"/>
+<meta name="color:Link Post Content" content="#111111"/>
+<meta name="color:Link Post Hover Background" content="#e4adaa"/>
+<meta name="color:Link Post Hover Content" content="#ffffff"/>
+<meta name="color:Post Question Background" content="#eae2e9"/>
+<meta name="color:Post Question Content" content="#111111"/>
+<meta name="color:Tag" content="#ad5b50"/>
+<meta name="color:Text Borders" content="#dddddd"/>
+<meta name="color:User" content="#725f71"/>
+<meta name="color:Post Permalink Background" content="#e68998"/>
+<meta name="color:Post Permalink Content" content="#ffffff"/>
+<meta name="color:Post Permalink Hover Content" content="#85144b"/>
+
+<meta name="if:Show Tumblr Controls On Hover" content="0"/>
+<meta name="if:Dark Tumblr Controls" content="0"/>
+
+<meta name="select:Post Width" title="300px" content="300"/>
+<meta name="select:Post Width" title="325px" content="325"/>
+<meta name="select:Post Width" title="350px" content="350"/>
+<meta name="select:Post Width" title="400px" content="400"/>
+<meta name="select:Post Width" title="450px" content="450"/>
+<meta name="select:Post Width" title="500px" content="500"/>
+<meta name="select:Post Width" title="540px" content="540"/>
+
+<meta name="text:Link One Title" content="" />
+<meta name="text:Link One URL" content="" />
+<meta name="text:Link Two Title" content="" />
+<meta name="text:Link Two URL" content="" />
+<meta name="text:Link Three Title" content="" />
+<meta name="text:Link Three URL" content="" />
+<meta name="text:Link Four Title" content="" />
+<meta name="text:Link Four URL" content="" />
+{/block:Hidden}
+<!--css-->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/m9713/themes/burn%20it%20down/basics.min.css"><!--font--><link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"><!--photosets--><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/Spacetchi/tumblr-flexible-photoset/style-tumblr-like.min.css"><!--tooltip--><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/iamceege/tooltipster/dist/css/tooltipster.bundle.min.css"/><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/louisameline/tooltipster-follower/dist/css/tooltipster-follower.min.css"/>
+</head>
+
+<style type="text/css">
+
+:root{
+--NPF-Image-Spacing:4px;
+
+--Accent:{RGBcolor:Accent};
+--Selection-Background:{RGBcolor:Selection Background};
+--Selection-Content:{RGBcolor:Selection Content};
+--Text:{RGBcolor:Text};
+--Text-Borders:{RGBcolor:Text Borders};
+}
+
+/*tumblr controls*/
+
+iframe.tmblr-iframe{
+    right:10px;
+{block:ifShowTumblrControlsOnHover}
+    right:0;
+    padding-right:3em;
+    opacity:0.0000001;
+{/block:ifShowTumblrControlsOnHover}
+{block:ifDarkTumblrControls}
+    filter:contrast(150%) invert(100%);
+    -webkit-filter:contrast(150%) invert(100%);
+{block:ifDarkTumblrControls}}
+    iframe.tmblr-iframe:hover{
+        opacity:1!important;
+        transition:all .3s linear;    
+        -o-transition:all .3s linear;
+        -moz-transition:all .3s linear;  
+        -webkit-transition:all .3s linear;
+    }
+
+.cc{
+    float:right;
+    display:block;
+    width:1em;
+    height:1em;
+    position:fixed;
+    z-index:15;
+    top:15px; right:15px;
+    color:{color:text};
+}
+
+/*basics*/
+
+body{
+    font:normal 13px/1.4em 'Fira Sans', sans-serif;
+    color:{color:text};
+    background:{color:background};
+}
+
+a{
+    color:{color:link};
+    background:linear-gradient({color:link border},{color:link border}) 0 96%/100% 1px no-repeat;}
+    a:hover{
+        color:{color:text};
+        background-size:100% 0.4em;
+    }
+
+/*scrollbar*/
+
+::-webkit-scrollbar {
+    height:6px;
+    width:6px; 
+    background:{color:background};
+}
+
+::-webkit-scrollbar-track{background:transparent;}
+
+::-webkit-scrollbar-thumb{
+    background:{color:scrollbar thumb};
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+}
+
+/*header*/
+
+header{
+    width:{select:post width}px;
+    margin:100px auto 0;
+}
+
+#topbar{
+    width:100%;
+    height:auto;
+    margin-bottom:10px;
+}
+
+#stext{
+    width:100%;
+    text-align:justify;
+}
+
+/*navigation*/
+
+nav{
+    width:100%;
+    margin-top:25px;}
+    nav a{
+        display:inline-block;
+        margin:0 10px 5px 0;
+        padding:2px 4px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        background:rgba({RGBcolor:navigation link background}, .4);
+        color:{color:navigation link color};
+        text-transform:lowercase;}
+    nav a:hover, nav a.current{background:rgba({RGBcolor:navigation link background}, 1);}
+    nav a.current{font-weight:500;}
+    nav a:last-of-type{margin-right:0;}
+
+/*posts*/
+
+section{
+    width:{select:post width}px;
+    margin:50px auto;
+}
+
+article{
+    width:100%;
+    position:relative;
+{block:indexpage}
+    margin-bottom:50px;
+{/block:indexpage}}
+    article.post{background:{color:content};}
+    article:last-of-type{margin-bottom:0;}
+
+.post_page{
+    background:{color:content};
+    padding:2em;
+    box-sizing:border-box;
+    font-size:1.2em;}
+    .post_page .tag{
+        font-weight:500;
+        color:{color:tag};}
+        .post_page .tag:before{content:'\0023';}
+
+/*quote*/
+
+.quote{
+    display:block;
+    width:100%;
+    margin:0;
+    padding:2em;
+    box-sizing:border-box;
+    color:{color:text};
+    font-weight:500;
+    font-size:1.2em;
+    line-height:1.6em;
+}
+
+#s{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+    border-top:1px solid {color:borders};
+    padding:0 2em 2em;
+    word-break:break-word;}
+    #s span{
+        margin-top:-1px;
+        padding-top:2em;
+        display:inline-block;
+        position:relative;}
+        #s span:before{
+            content:attr(source);
+            position:absolute;
+            top:0; left:0;
+            width:100%;
+            height:2px;
+            background:{color:accent};
+            overflow:hidden;
+            color:transparent;
+        }
+
+/*text and link post*/
+
+.title{
+    display:block;
+    width:100%;
+    padding:0;
+    box-sizing:border-box;
+    position:relative;
+    font-weight:500;
+    font-size:1.2em;}
+    .text_post.title{padding:2em 2em 0;}
+
+a.link_post{
+    width:100%;
+    display:block;
+    background:none;
+    border:none;}
+    a.link_post:hover .link{
+        background:{color:link post hover background};
+        color:{color:link post hover content};
+        transition:all .3s linear;
+    }
+
+.thumbnail{
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0;
+}
+
+.link{
+    width:100%;
+    margin:0;
+    padding:2em;
+    box-sizing:border-box;
+    background:{color:link post background};
+    color:{color:link post content};
+    transition:all .3s linear;
+}
+
+.link-host{
+    display:block;
+    margin-top:1em;
+    text-align:left;
+    text-transform:uppercase;
+}
+
+.text, .asker-question, .replies{
+    display:block;
+    margin-top:1em;
+    text-align:justify;
+}
+
+/*chat*/
+
+.chat{
+    margin:0;
+    padding:0;
+    list-style:none;
+    letter-spacing:.015rem;
+    text-align:left;}
+    .chat li:before{display:none;}
+
+.l{
+    margin:0;
+    padding:2em;
+    background:{color:borders};
+    border-bottom:1px solid {color:content};}
+    .l:last-child{border-bottom:0;}
+
+.label{
+    font-weight:500;
+    margin-right:5px;
+    color:{color:text};
+}
+
+/*answer*/
+
+.question, .answer{
+    width:100%;
+    margin:0;
+    padding:2em;
+    box-sizing:border-box;
+    background:{color:post question background};
+    color:{color:post question content};
+}
+
+.answer{
+    color:{color:text}!important;
+    background:none!important;
+}
+
+/*caption*/
+
+.caption{
+    margin:0;
+    padding:2em 2em 1em;
+    list-style:none;}
+    .caption:last-of-type{padding-bottom:2em;}
+
+a.user, .answerer a, .asker a{
+    font-weight:500;
+    color:{color:user};
+    background:none;
+}
+
+.user, .answerer, .asker{
+    margin:0;
+    display:inline;
+    color:{color:text};
+    font-weight:500;}
+    .user.deactivated{
+        position:relative;
+        cursor:no-drop;
+        user-select:none;
+        -ms-user-select:none;
+        -moz-user-select:none;
+        -khtml-user-select:none;
+        -webkit-user-select:none;
+        -webkit-touch-callout:none;}
+        .deactivated:after{
+            content:'{block:English}Deactivated{/block:English}{block:German}Deaktiviert{/block:German}{block:French}Désactivé{/block:French}{block:Italian}Disattivato{/block:Italian}{block:Japanese}無効化{/block:Japanese}{block:Turkish}Kapatıldı{/block:Turkish}{block:Spanish}Desactivado{/block:Spanish}{block:Russian}Деактивировано{/block:Russian}{block:Polish}deaktywowano{/block:Polish}{block:PortuguesePT}Desativado{/block:PortuguesePT}{block:PortugueseBR}Desativado{/block:PortugueseBR}{block:Dutch}Gedeactiveerd{/block:Dutch}{block:Korean}사용 안 함{/block:Korean}{block:ChineseSimplified}已关闭{/block:ChineseSimplified}{block:ChineseTraditional}已停用{/block:ChineseTraditional}{block:ChineseHK}已停用{/block:ChineseHK}{block:Indonesian}Dinonaktifkan{/block:Indonesian}{block:Hindi}निष्क्रिय{/block:Hindi}';
+            position:absolute;
+            opacity:.25;
+            margin:0;
+            top:0; left:calc(100% + 5px);
+            font-weight:500;
+            color:{color:text};
+            text-transform:lowercase;
+            transition:opacity .6s;}
+            .deactivated:hover:after{
+                opacity:.75;
+                transition:opacity .6s;}
+
+.user-avatar, .answerer-avatar, .asker-avatar{
+    display:inline-block;
+    width:25px;
+    height:25px;
+    vertical-align:middle;
+    margin-right:5px;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+}
+
+/*tags*/
+
+.edd .tags{border-top:1px solid {color:borders};}
+
+.tags{
+    display:block;
+    width:100%;
+    padding:2em;
+    margin:0;
+    box-sizing:border-box;}
+    .tags a{
+        display:inline-block;
+        margin-right:10px;
+        background:none;
+        letter-spacing:.01rem;
+        font-weight:500;
+        color:{color:tag};}
+        .tags a:before{content:'\0023';}
+        .tags a:hover{color:{color:text};}
+        .tags a:last-of-type{margin-right:0;}
+        .tags svg{
+            display:inline-block;
+            width:1em;
+            height:1em;
+            vertical-align:middle;
+            margin-right:5px;
+            color:{color:text};
+        }
+
+/*permalink*/
+
+.permalink{
+    width:100%;
+    margin:0;
+    padding:2em;
+    box-sizing:border-box;
+    background:{color:post permalink background};
+    display:-webkit-flex;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:-webkit-row;
+    flex-direction:row;
+    justify-content:space-between;
+    -webkit-flex-align:flex-start;
+    align-items:flex-start;}
+    .permalink a{
+        background:none;
+        color:{color:post permalink content};}
+        .permalink a:hover{color:{color:post permalink hover content};}
+    .permalink svg{
+        display:inline-block;
+        width:1em;
+        height:1em;
+        vertical-align:middle;
+        margin-right:5px;
+    }
+
+/*like button*/
+
+a.like-b{
+    position:relative;
+    display:inline-block;
+    height:1em;
+    vertical-align:baseline;
+    overflow:hidden;
+    margin-right:10px;}
+    a.like-b .like_button iframe{
+        position:absolute;
+        top:0; left:0; bottom:0; right:0;
+        z-index:2;
+        opacity:0.0000001;}
+    a.like-b .b:before{content:"{block:English}Like{/block:English}{block:German}Liken{/block:German}{block:French}J'aime{/block:French}{block:Italian}Mi piace{/block:Italian}{block:Japanese}スキ{/block:Japanese}{block:Turkish}Beğen{/block:Turkish}{block:Spanish}Me gusta{/block:Spanish}{block:Russian}Нравится{/block:Russian}{block:Polish}Lubię{/block:Polish}{block:PortuguesePT}Gostar{/block:PortuguesePT}{block:PortugueseBR}Curtir{/block:PortugueseBR}{block:Dutch}Vind ik leuk{/block:Dutch}{block:Korean}좋아요{/block:Korean}{block:ChineseSimplified}喜欢{/block:ChineseSimplified}{block:ChineseTraditional}喜歡{/block:ChineseTraditional}{block:ChineseHK}喜歡{/block:ChineseHK}{block:Indonesian}Suka{/block:Indonesian}{block:Hindi}पसंद करें{/block:Hindi}";}
+    a.like-b .liked + .b:before{content:"{block:English}Unlike{/block:English}{block:German}Entliken{/block:German}{block:French}Je n'aime plus{/block:French}{block:Italian}Non mi piace{/block:Italian}{block:Japanese}スキ解除{/block:Japanese}{block:Turkish}Beğenme{/block:Turkish}{block:Spanish}Ya no me gusta{/block:Spanish}{block:Russian}Не нравится{/block:Russian}{block:Polish}Nie lubię{/block:Polish}{block:PortuguesePT}Deixar de gostar{/block:PortuguesePT}{block:PortugueseBR}Curtir (desfazer){/block:PortugueseBR}{block:Dutch}Vind ik niet meer leuk{/block:Dutch}{block:Korean}좋아요 취소{/block:Korean}{block:ChineseSimplified}取消喜欢{/block:ChineseSimplified}{block:ChineseTraditional}收回喜歡{/block:ChineseTraditional}{block:ChineseHK}收回喜歡{/block:ChineseHK}{block:Indonesian}Tidak Suka{/block:Indonesian}{block:Hindi}पसंद हटाएँ{/block:Hindi}";
+        color:{color:post permalink hover content};
+    }
+
+/*notes*/
+
+.post_notes{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+.date{
+    width:100%;
+    padding:2em;
+    box-sizing:border-box;
+    border-top:1px solid {color:borders};
+    border-bottom:1px solid {color:borders};
+    background:{color:content};
+    font-weight:500;
+    letter-spacing:0.02rem;
+}
+
+.source{
+    width:100%;
+    display:-webkit-flex;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:-webkit-row;
+    flex-direction:row;
+    justify-content:space-between;
+    -webkit-flex-align:flex-start;
+    align-items:flex-start;
+}
+
+.source_name{
+    width:50%;
+    overflow:hidden;
+    padding:2em;
+    box-sizing:border-box;
+    background:{color:content};
+    display:-webkit-flex;
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:-webkit-row;
+    flex-direction:row;
+    justify-content:flex-start;
+    -webkit-flex-align:center;
+    align-items:center;}
+    .source_name svg{
+        width:1em;
+        height:1em;
+        margin-right:5px;}
+    .source a{
+        color:{color:link border};
+        margin-left:5px;
+        background:none;}
+    .source_name:nth-child(2){border-left:1px solid {color:borders};}
+    .source_name:only-child{width:100%;}
+
+ol.notes {
+    width:100%;
+    margin:0;
+    padding:0;
+    list-style-type:none;}
+    ol.notes li.note:before{
+        content:'';
+        position:absolute;
+        top:3em; left:3em;
+        height:1em;
+        padding:5px;
+        background:{color:background};
+        -webkit-border-radius:100%;
+        border-radius:100%;}
+    ol.notes li.note.reblog:before{content:url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 31, 63)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-repeat'%3E%3Cpolyline points='17 1 21 5 17 9'%3E%3C/polyline%3E%3Cpath d='M3 11V9a4 4 0 0 1 4-4h14'%3E%3C/path%3E%3Cpolyline points='7 23 3 19 7 15'%3E%3C/polyline%3E%3Cpath d='M21 13v2a4 4 0 0 1-4 4H3'%3E%3C/path%3E%3C/svg%3E");}
+    ol.notes li.note.like:before{content:url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='rgb(255, 65, 54)' stroke='rgb(255, 65, 54)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-heart'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");}
+    ol.notes li.note{
+        position:relative;
+        padding:2em;
+        background:{color:content};
+        border-bottom:1px solid {color:borders};}
+    ol.notes li.note:first-of-type{border-top:1px solid {color:borders};}
+    ol.notes li.note:last-of-type{border-bottom:0;}
+    ol.notes li.note blockquote{margin-left:1em;}
+    ol.notes li.note a{background:none;}
+    ol.notes li.note a:first-of-type{
+        font-weight:500;
+        color:{color:accent};}
+    ol.notes li.note img.avatar{
+        display:inline-block;
+        width:2em;
+        height:2em;
+        vertical-align:middle;
+        -webkit-border-radius:100%;
+        border-radius:100%;
+        margin-right:.5em;}
+    ol.notes li.note.more_notes_link_container{
+        width:100%;
+        padding:2em;
+        margin:0;
+   }
+
+.more_notes_link, .notes_loading{
+    display:block;
+    color:{color:link};!important;
+    font-weight:500!important;
+    text-align:left!important;
+}
+
+/*pagination*/
+
+footer{
+    position:relative;
+    width:100%;
+    margin:0;
+    padding:50px 2em;
+    box-sizing:border-box;
+    text-align:center;}
+    footer svg{
+        display:inline-block;
+        width:1em;
+        height:1em;
+        vertical-align:middle;
+        margin:0 5px;}
+    footer a{
+        color:{color:text};
+        font-size:1.2em;
+        opacity:0.5;
+        background:none;
+        display:inline-block;
+        margin-right:4em;}
+        footer a:before{
+            content:'\1f81c';
+            display:inline;
+            margin-right:5px;}
+        footer a.next:before{display:none;}
+        footer a.next:after{
+            content:'\1f81e';
+            margin-left:5px;}
+        footer a:last-of-type{margin-right:0;}
+    footer a.active{
+        font-weight:500;
+        opacity:1;
+        background:-webkit-gradient(linear, left top, right top, from({color:accent}), color-stop(50%, {color:accent}), color-stop(50%, {color:text}));
+        background:linear-gradient(to right, {color:accent}, {color:accent} 50%, {color:text} 50%);
+        background-clip:text;
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        background-size:200% 100%;
+        background-position:100%;
+        -webkit-transition:background-position 275ms ease;
+        transition:background-position 275ms ease;}
+        footer a.active:hover{background-position: 0 100%;}
+
+@media screen and (max-width:850px){
+    aside{
+        width:{select:post width}px;
+        min-height:auto;
+        position:relative;
+        right:0; left:0;
+        margin:100px auto 0;
+    }
+    #sbarimg{display:none;}
+    section{margin:50px auto;}
+}
+
+@media screen and (max-width:768px){
+    aside, section{width:70%;}
+}
+
+@media screen and (max-width:480px){
+    aside, section{width:95vw;}
+}
+
+{CustomCSS}
+</style>
+
+<body>
+{block:ifShowTumblrControlsOnHover}<div class="cc" data-feather="more-vertical"></div>{/block:ifShowTumblrControlsOnHover}<header>{block:ifHeaderImage}<img src="{image:header}" id="topbar"/>{/block:ifHeaderImage}<div id="stext">{description}</div><nav><a href="/">{lang:home}</a>{block:AskEnabled}<a href="/ask">{block:English}Ask{/block:English}{block:German}Fragen{/block:German}{block:French}Question{/block:French}{block:Italian}Chiedi{/block:Italian}{block:Japanese}質問{/block:Japanese}{block:Turkish}Sor{/block:Turkish}{block:Spanish}Preguntar{/block:Spanish}{block:Russian}Спросить{/block:Russian}{block:Polish}Zapytaj{/block:Polish}{block:PortuguesePT}Perguntar{/block:PortuguesePT}{block:PortugueseBR}Perguntar{/block:PortugueseBR}{block:Dutch}Vragen{/block:Dutch}{block:Korean}질문하기{/block:Korean}{block:ChineseSimplified}提问{/block:ChineseSimplified}{block:ChineseTraditional}提問{/block:ChineseTraditional}{block:ChineseHK}提問{/block:ChineseHK}{block:Indonesian}Tanya{/block:Indonesian}{block:Hindi}पूछें{/block:Hindi}</a>{/block:AskEnabled}<a href="/archive">{lang:archive}</a>{block:ifLinkOneTitle}<a href="{text:link one url}">{text:link one title}</a>{/block:ifLinkOneTitle}{block:ifLinkTwoTitle}<a href="{text:link two url}">{text:link two title}</a>{/block:ifLinkTwoTitle}{block:ifLinkThreeTitle}<a href="{text:link three url}">{text:link three title}</a>{/block:ifLinkThreeTitle}{block:ifLinkFourTitle}<a href="{text:link four url}">{text:link four title}</a>{/block:ifLinkFourTitle}
+{block:HasPages}{block:Pages}<a href="{url}">{label}</a>{/block:Pages}{/block:HasPages}</nav></header><a href="https://aurthms.tumblr.com" target="_blank"><credit></credit></a>
+
+<!--posts-->
+<section id="entries">
+{block:TagPage}<article class="post_page">{lang:Showing posts tagged Tag 2}</article>{/block:TagPage}{block:Posts}<article id="{PostID}" class="{block:Caption}edd{/block:Caption} {block:Quote}edd{/block:Quote} {block:Text}edd{/block:Text} {block:Link}{block:Description}edd{/block:Description}{/block:Link} {block:Answer}edd{/block:Answer} post">
+
+{block:Quote}<div class="quote">{Quote}</div>{block:Source}<div id="s"><span source='{Source}'>{Source}</span></div>{/block:Source}{/block:Quote}
+
+{block:Text}{block:Title}<div class="text_post title">{Title}</div>{/block:Title}{block:RebloggedFrom}{block:Reblogs}<li class="caption">{block:IsActive}<a {block:haspermalink}href="{permalink}"{/block:haspermalink} class="user" target="_blank"><img class="user-avatar" src="{PortraitURL-64}"/> {username}</a>{/block:IsActive}{block:IsDeactivated}<div class="user deactivated"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</div>{/block:IsDeactivated}<div class="text">{Body}</div></li>{/block:Reblogs}{/block:RebloggedFrom}{block:NotReblog}<li class="caption">{body}</li>{/block:NotReblog}{/block:Text}
+
+{block:Link}<a class="link_post" href="{URL}" {Target}>{block:Thumbnail}<img src="{Thumbnail-HighRes}" class="thumbnail"/>{/block:Thumbnail}<div class="link"><div class="title">{Name}</div>{block:Excerpt}<div class="text">{Excerpt}</div>{/block:Excerpt}{block:Host}<div class="link-host">{Host}</div>{/block:Host}</div></a>{block:Description}{block:NotReblog}<li class="caption">{description}</li>{/block:NotReblog}{/block:Description}{block:RebloggedFrom}{block:Reblogs}{block:Description}<li class="caption">{block:IsActive}<a {block:haspermalink}href="{permalink}"{/block:haspermalink} class="user" target="_blank"><img class="user-avatar" src="{PortraitURL-64}"/> {username}</a>{/block:IsActive}{block:IsDeactivated}<div class="user deactivated"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</div>{/block:IsDeactivated}<div class="text">{Body}</div></li>{/block:Description}{/block:Reblogs}{/block:RebloggedFrom}{/block:Link}
+
+{block:Chat}{block:Title}<div class="titles">{Title}</div>{/block:Title}<ol class="chat">{block:Lines}<li class="l {Alt}">{block:label}<span class="label">{label}</span>{/block:label}<span class="line">{Line}</span></li>{/block:Lines}</ol>{/block:Chat}
+
+{block:Photo}<div id="media"><a href="#" onclick="Tumblr.Lightbox.init([{ width: {PhotoWidth-HighRes}, height: {PhotoHeight-HighRes}, low_res: '{PhotoURL-500}', high_res: '{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}" /></a></div>{/block:Photo}
+
+{block:Photoset}<div class="photoset" data-layout="{PhotosetLayout}">{block:Photos}<div class="image-container" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" data-lowres="{PhotoURL-500}" data-highres="{PhotoURL-HighRes}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="image"/></div>{/block:Photos}</div>{/block:Photoset}
+
+{block:Video}<div class="video">{Video-500}</div>{/block:Video}
+
+{block:Audio}{block:AudioEmbed}<div class="audio-media"><div class="width_fix">{AudioEmbed-500}</div></div>{/block:AudioEmbed}{/block:Audio}
+
+{block:Answer}<div class="question"><img class="asker-avatar" src="{AskerPortraitURL-40}"/><div class="asker">{lang:Asker asked 2}</div><div class="asker-question">{Question}</div></div>{block:Answerer}<div class="answer"><div class="answerer"><img class="answerer-avatar" src="{AnswererPortraitURL-40}"/>{Answerer}</div><div class="replies">{Answer}</div></div>{/block:Answerer}{block:NotReblog}<li class="caption"><div class="text">{Replies}</div></li>{/block:NotReblog}{block:Reblogs}<li class="caption">{block:IsOriginalEntry}{block:IsActive}<a {block:HasPermalink}href="{Permalink}"{/block:HasPermalink} class="user" target="_blank"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</a>{/block:IsActive}{block:IsDeactivated}<div class="user deactivated"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</div>{/block:IsDeactivated}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}<a {block:HasPermalink}href="{Permalink}"{/block:HasPermalink} class="user" target="_blank"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</a>{/block:IsNotOriginalEntry}<div class="text">{Body}</div></li>{/block:Reblogs}{/block:Answer}
+
+<!--caption-->
+{block:Caption}{block:Reblogs}<li class="caption">{block:IsOriginalEntry}{block:IsActive}<a {block:HasPermalink}href="{Permalink}"{/block:HasPermalink} class="user" target="_blank"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</a>{/block:IsActive}{block:IsDeactivated}<div class="user deactivated"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</div>{/block:IsDeactivated}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}<a {block:HasPermalink}href="{Permalink}"{/block:HasPermalink} class="user" target="_blank"><img class="user-avatar" src="{PortraitURL-64}"/> {Username}</a>{/block:IsNotOriginalEntry}<div class="text">{Body}</div></li>{/block:Reblogs}{block:NotReblog}<li class="caption">{Caption}</li>{/block:NotReblog}<!--{block:ContentSource}<a href="{SourceURL}">Source</a>{/block:ContentSource}-->{/block:Caption}
+
+<!--tags-->
+{block:HasTags}<div class="tags"><span data-feather="tag"></span>{block:Tags}<a href="{TagUrl}">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
+<!--permalink-->
+{block:indexpage}{block:Date}<div class="permalink"><a href="{permalink}"><span data-feather="clock"></span><span class="time-ago">{TimeStamp}</span>{block:NoteCount}&nbsp;<span class="notecount">{NoteCount}</span>&nbsp;{lang:notes}{/block:NoteCount}</a><div id="controls"><a class="like-b" href="#">{LikeButton}<span class="b"></span></a><a href="{reblogurl}">{block:English}Reblog{/block:English}{block:German}Rebloggen{/block:German}{block:French}Rebloguer{/block:French}{block:Italian}Reblogga{/block:Italian}{block:Japanese}リブログ{/block:Japanese}{block:Turkish}Yeniden Blogla{/block:Turkish}{block:Spanish}Rebloguear{/block:Spanish}{block:Russian}Реблог{/block:Russian}{block:Polish}Rebloguj{/block:Polish}{block:PortuguesePT}Reblogar{/block:PortuguesePT}{block:PortugueseBR}Reblogar{/block:PortugueseBR}{block:Dutch}Rebloggen{/block:Dutch}{block:Korean}리블로그{/block:Korean}{block:ChineseSimplified}转发{/block:ChineseSimplified}{block:ChineseTraditional}轉格{/block:ChineseTraditional}{block:ChineseHK}轉載{/block:ChineseHK}{block:Indonesian}Reblog{/block:Indonesian}{block:Hindi}रीब्लॉग करेंे{/block:Hindi}</a></div></div>{/block:Date}{/block:indexpage}</article>
+
+<!--post notes-->
+{block:PostNotes}<article class="post_notes"><div class="date">{lang:Posted on DayOfWeek the DayOfMonthWithSuffix of Month Year at FormattedTime}</div>{block:RebloggedFrom}<div class="source">{block:ContentSource}<div class="source_name"><span data-feather="user"></span>{lang:Originally from ReblogRootName 2}</div>{/block:ContentSource}<div class="source_name"><span data-feather="repeat"></span>{lang:Reblogged from ReblogParentName 2}</div></div>{/block:RebloggedFrom}{PostNotes}</article>{/block:PostNotes}{/block:Posts}</section>
+
+<!--pagination-->
+{block:Pagination}<footer><a {block:PreviousPage}class="active prev" href="{PreviousPage}"{/block:PreviousPage}>{lang:Prev}</a><a {block:NextPage}class="active next" href="{NextPage}"{/block:NextPage}>{lang:Next}</a></footer>{/block:Pagination}
+
+<!--scripts-->
+<!--jquery--><script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><!--jquery user interface--><script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script><!--feather icons--><script src="//cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script><!--timeAgo plugin--><script type="text/javascript" src="//static.tumblr.com/i5s2zks/9Acok8oo2/bct-timeago.min.js"></script><!--responsive media--><script src="//cdn.jsdelivr.net/gh/robinpx/tumblr/scripts/flexibleFrames/flexibleFrames.min.js"></script><!--photosets--><script src="https://cdn.jsdelivr.net/gh/Spacetchi/tumblr-flexible-photoset/functions.min.js"></script><script src="//dl.dropbox.com/s/m8mtje1avef2a2y/npf-styling.js"></script><script src="//cdn.jsdelivr.net/gh/boscoxvi/npfphotosets/npfphotosets.min.js"></script><!--tooltip--><script type="text/javascript" src="//cdn.jsdelivr.net/gh/iamceege/tooltipster/dist/js/tooltipster.bundle.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/louisameline/tooltipster-follower/dist/js/tooltipster-follower.min.js"></script>
+
+<script>
+feather.replace();
+$(document).ready(function(){
+  var url = window.location.href;
+  var activePage = url;
+  $('nav a').each(function () {
+    var linkPage = this.href;
+
+    if (activePage == linkPage) {
+      $(this).closest("a").addClass("current");
+    }
+  });
+  //tooltip
+  $('[title]').tooltipster({
+      anchor:'top-left',
+      offset:[14, -18], 
+      plugins:["follower"], 
+      animationDuration:300, 
+      delay:100, 
+      maxWidth:160, 
+      theme:'tooltipster-borderless'
+  });
+  //audio player
+  var $audio = $('iframe.tumblr_audio_player');
+  $audio.load(function() {
+    $(this).contents().find('head').append('<style type="text/css">' +
+      '.audio-player { background: {color:audio post background}; color: {color:audio post content} !important; }' +
+      '.audio-player .audio-info .track-artist { color: {color:audio post content} !important; }' +
+    '</style>');
+  });
+  //time plugin
+  $('.time-ago').timeAgo({
+    time:'short',
+    spaces: true,
+  });
+  //round notes
+  var $container = $('article');
+  $container.find('.notecount').each(function(){
+    var n = $(this).html().split(' ')[0].replace(/,/g, '');
+    if (n > 999) {
+      n = Math.floor(n / 100) / 10;
+      $(this).text(n + 'k');
+    }
+  });
+  //responsive media
+  function flexFrame() {
+    $(".caption").each(function () {
+      $(this).find("iframe").wrap("<div class='iframe-flex'></div>"), flexibleFrames($(".iframe-flex"));
+    }),
+      flexibleFrames($(".video"));
+  }
+  $(document).ready(flexFrame);
+  //remove tumblr redirects script by magnusthemes@tumblr 
+  $('a[href*="t.umblr.com/redirect"]').each(function(){
+    var originalURL = $(this).attr("href").split("?z=")[1].split("&t=")[0];
+    var replaceURL = decodeURIComponent(originalURL);
+    $(this).attr("href", replaceURL);
+  });
+});
+//photosets
+window.addEventListener('load', startup, false);
+function startup() {
+    let photosets = document.getElementsByClassName("photoset");
+    for (let i = 0, n = photosets.length; i < n; i++) {
+        makeLightboxes(photosets[i]);
+        makePhotoset(photosets[i]);
+    }
+}
+npfPhotosets(".post", npfOptions);
+</script>
+
+</body>
+</html>
