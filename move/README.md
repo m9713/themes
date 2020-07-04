@@ -1,7 +1,7 @@
 <h1>MOVE</h1>
 <p>A retro/vaporwave inspired about page</p>
 
-<p><a href="https://aurthms.tumblr.com/page/move/preview" target="_blank">static preview</a></p>
+<p><a href="https://aurthms.tumblr.com/move/preview" target="_blank">static preview</a></p>
 
 <h2>Customization</h2>
 <h4>How to change picture</h4>
