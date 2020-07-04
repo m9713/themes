@@ -1,0 +1,475 @@
+<!--
+
+
+    theme page:      MOVE
+    made by:         aurthms
+
+    CHECK //aurthms.tumblr.com/page/move/info FOR CUSTOMIZATION HELP
+    
+
+-->
+
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--css-->
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css/normalize.css">
+<!--font--><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+<!--aesthetic.css--><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aesthetic-css@1.0.1/aesthetic.css">
+</head>
+
+<style type="text/css">
+
+:root{
+--Background-Color:#FF00FE;
+/**THE GRID COLORS NEED TO BE RGB**/
+--Grid-Color:237, 0, 12;
+--Grid-Shadow-Color:10, 132, 231;
+
+--Font-Color:#111111;
+--Link-Color:#000080;
+--Color-Navigation-Link-Active:#f0f0f0;
+
+--Content-Width:540px;
+}
+
+/* TUMBLR CONTROLS */
+
+iframe.tmblr-iframe, iframe.tmblr-iframe:hover{
+    opacity:0 !important;
+    visibility:hidden !important;
+    display:none !important;
+}
+
+/*LINKS*/
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover{
+    color:var(--Link-Color);
+    background:linear-gradient(var(--Link-Color),var(--Link-Color))0 100%/100% 1px no-repeat;
+	text-decoration:none;
+	-moz-transition:0.3s ease-in;
+	-webkit-transition:0.3s ease-in;
+	-o-transition:0.3s ease-in;
+	transition:0.3s ease-in;
+}
+
+a:hover{
+    background:linear-gradient(135deg, rgb(16,215,174) 0%, rgb(255,106,213) 100%)0 100%/100% 1px no-repeat;
+}
+
+/*text*/
+
+p:first-of-type{
+    margin-top:0;
+}
+
+pre{
+	white-space:pre-wrap;
+	white-space:0;
+	word-wrap:break-word;
+	font-size:0.7em;
+	line-height:1.5;
+}
+
+blockquote{
+	padding:0;
+	margin:0;
+}
+
+b,
+strong{
+    font-weight:700;
+}
+
+u{
+    background-image:-webkit-gradient(linear, left top, left bottom, from(var(--Font-Color)), to(var(--Font-Color)));
+    background-image:linear-gradient(var(--Font-Color), var(--Font-Color));
+    background-repeat:repeat-x;
+    background-position:0% 92%;
+    background-size:1px 1px;
+    color:var(--Font-Color);
+    text-decoration:none;
+    letter-spacing: 
+    1px;
+}
+
+/* BODY */
+
+body{
+    background:var(--Background-Color);
+    background-image:linear-gradient(rgba(var(--Grid-Color),0.7) .2em, transparent .2em), linear-gradient(90deg, rgba(var(--Grid-Color),0.7) .2em, transparent .2em), linear-gradient(90deg, rgba(var(--Grid-Shadow-Color),0.7) .4em, transparent .4em);
+    background-size:3em 3em;
+    color:var(--Font-Color);
+    font-family:'VT323', monospace;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:16px;
+    height:16px;
+}
+
+::-webkit-scrollbar-track{
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVQIW2M4fPz0////GYAYyAIASnoKpV3w4kgAAAAASUVORK5CYII=");
+    image-rendering:pixelated;
+}
+
+::-webkit-scrollbar-track:active{
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEElEQVQIW2No6+pjgAAgCwAWogM9VKrgGQAAAABJRU5ErkJggg==");
+}
+
+::-webkit-scrollbar-thumb{
+    border-top:1px solid #c3c7cb;
+    border-left:1px solid #c3c7cb;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+    width:16px;
+    height:16px;
+    background-color:#c3c7cb;
+    z-index:1;
+}
+
+::-webkit-scrollbar-corner{
+    background-color:#c3c7cb;
+}
+
+::-webkit-resizer{
+    width:16px;
+    height:16px;
+    background-color:#c3c7cb;
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+  background-position:bottom right;
+  background-repeat:no-repeat;
+  image-rendering:pixelated;
+}
+
+::-webkit-scrollbar-button, ::-webkit-scrollbar-button{
+    border-top:1px solid #c3c7cb;
+    border-left:1px solid #c3c7cb;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+    box-shadow:inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+    display:block;
+    width:16px;
+    height:16px;
+    background-color:#c3c7cb;
+    image-rendering:pixelated;
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+::-webkit-scrollbar-button:active, ::-webkit-scrollbar-button:active{
+    background-position:2px 2px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement, ::-webkit-scrollbar-button:horizontal:decrement{
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHklEQVQY02NgoBT8xyX8H5fwf1zCpOjAYwceV1EEAAO2D/HsQ4vsAAAAAElFTkSuQmCC");
+}
+
+::-webkit-scrollbar-button:horizontal:increment, ::-webkit-scrollbar-button:horizontal:increment{
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAHUlEQVQY02NgIB/8xy3xH7fEf9wS/0nUQZqrKAYAK44P8ZRmzLQAAAAASUVORK5CYII=");
+}
+
+::-webkit-scrollbar-button:vertical:decrement, ::-webkit-scrollbar-button:vertical:decrement{
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGklEQVR4AWMYxuA/SYphmETFhDX9x4mHGQAAcL4P8dQiMq8AAAAASUVORK5CYII=");
+}
+
+::-webkit-scrollbar-button:vertical:increment, ::-webkit-scrollbar-button:vertical:increment{
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAF0lEQVQY02NgoBf4jwJxSOHQhcNAOgMAWWAP8Rv2U3UAAAAASUVORK5CYII=");
+}
+
+::-webkit-scrollbar-button:horizontal:increment:start, ::-webkit-scrollbar-button:horizontal:increment:start{
+    display:none;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:end, ::-webkit-scrollbar-button:horizontal:decrement:end{
+    display: none;
+}
+
+::-webkit-scrollbar-button:vertical:increment:start, ::-webkit-scrollbar-button:vertical:increment:start{
+    display:none;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:end, ::-webkit-scrollbar-button:vertical:decrement:end{
+    display:none;
+}
+
+::-webkit-scrollbar-button:active, ::-webkit-scrollbar-button:active{
+    border-top:1px solid #868a8e;
+    border-left:1px solid #868a8e;
+    border-bottom:1px solid #868a8e;
+    border-right:1px solid #868a8e;
+    box-shadow:none;
+}
+
+/*content*/
+
+main{
+    width:var(--Content-Width);
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.container{
+    width:100%;
+    height:calc(100% - 28px);
+    margin:2px 0 0;
+    padding:5px;
+    box-sizing:border-box;
+    overflow:scroll !important;
+}
+
+.abt, .askbox, .nav, .askd{
+    position:absolute;
+    z-index:5;
+    padding:0;
+    margin:0;
+}
+
+.abt, .nav, .askd{
+    opacity:0;
+    visibility:hidden;
+    width:290px;
+    top:50%; left:-30%;
+    transform:translateY(-50%);
+}
+
+.abt.show, .nav.show, .askd.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.abt{
+    height:220px;
+    text-align:justify;
+	line-height:1.5;
+}
+
+.nav{
+    max-height:300px;
+}
+
+.askd{
+    height:360px;
+}
+
+.askbox{
+    width:360px;
+    top:50px; left:100%;
+    transform:translateX(-50%);
+}
+
+/*navigation*/
+
+.header-link{
+    list-style:none;
+    display:inline-block;
+    vertical-align:middle;
+    margin:0 10px 0 0;
+    padding:0;
+    background:linear-gradient(var(--Font-Color),var(--Font-Color))0 86%/5px 1px no-repeat;
+    text-transform:capitalize;
+    color:var(--Font-Color);
+}
+
+.header-link.active{
+    background:none;
+    color:var(--Color-Navigation-Link-Active);
+}
+
+.header-link:last-of-type{
+    margin-right:0;
+}
+
+.header-link:hover{
+    cursor:pointer;
+}
+
+.header-link a{
+    color:var(--Font-Color);
+    background:none;
+}
+
+/*links*/
+
+.etcetera div{
+    display:inline-block !important;
+    width:calc(100% / 3 - 20px) !important;
+    margin:0 5px 5px 0;
+}
+
+.etcetera div:last-of-type{
+    margin-right:0;
+}
+
+.handle{
+    cursor:move;
+    user-select:none;
+    -ms-user-select:none;
+    -moz-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+}
+
+.header{
+    width:100%;
+    text-align:center !important;
+}
+
+@media (max-width:860px){
+
+main{
+    width:calc(70vw);
+}
+
+.abt, .nav, .askd{
+    width:50%;
+    left:-20%;
+}
+
+.askbox{
+    width:60%;
+    left:100%;
+    transform:translateX(-70%);
+}
+
+.handle{
+    cursor:default;
+}
+
+}
+
+{CustomCSS}
+</style>
+
+<body><main>
+
+<!--IMAGE AND NAVIGATION-->
+<div class="aesthetic-windows-95-modal">
+<div class="aesthetic-windows-95-modal-title-bar"><div class="aesthetic-windows-95-modal-title-bar-text header">{name}</div><div class="aesthetic-windows-95-modal-title-bar-controls"><div class="aesthetic-windows-95-button-title-bar"><button>X</button></div></div></div>
+
+<!--NAVIGATION-->
+<div class="aesthetic-windows-95-modal-content navigation">
+<li class="header-link"><a href="/">{lang:home}</a></li>
+<li class="header-link" id="links">{lang:navigate}</li>
+<li class="header-link active" id="about">about</li>
+<li class="header-link" id="faq">F.A.Q.</li>
+</div>
+
+<!--IMAGE-->
+<div class="aesthetic-windows-95-modal-content"><img src="//static.tumblr.com/nuyvmrm/LtJqcvas6/14446002_1128442050582648_7929411903479268760_n.jpg"/></div></div>
+<!----/END---->
+
+<!----ABOUT---->
+<div class="aesthetic-windows-95-modal abt show draggable">
+<div class="aesthetic-windows-95-modal-title-bar handle"><div class="aesthetic-windows-95-modal-title-bar-text header">About</div><div class="aesthetic-windows-95-modal-title-bar-controls"><div class="aesthetic-windows-95-button-title-bar"><button>X</button></div></div></div><div class="aesthetic-windows-95-modal-content container">
+
+<!--START WRITTING HERE-->
+<div>
+<ul>
+    <li>you can use lists</li>
+</ul>
+
+<ol>
+    <li>ordered lists</li>
+</ol>
+
+<p>or some paragraphs</p>
+
+</div></div></div>
+<!----/END---->
+
+<!----LINKS/TAGS---->
+<div class="aesthetic-windows-95-modal nav draggable">
+<div class="aesthetic-windows-95-modal-title-bar handle"><div class="aesthetic-windows-95-modal-title-bar-text header">{lang:navigate}</div><div class="aesthetic-windows-95-modal-title-bar-controls"><div class="aesthetic-windows-95-button-title-bar"><button>X</button></div></div></div><div class="aesthetic-windows-95-modal-content container">
+
+<!--START WRITTING HERE-->
+<div class="etcetera">
+
+<div class="aesthetic-windows-95-button"><button onclick="window.open(' HERE GOES THE LINK','_self'); return false;"> HERE GOES THE TITLE</button></div>
+
+</div></div></div>
+<!----/END---->
+
+<!----FAQ---->
+<div class="aesthetic-windows-95-modal askd draggable">
+<div class="aesthetic-windows-95-modal-title-bar handle"><div class="aesthetic-windows-95-modal-title-bar-text header">Frequently Asked Questions</div><div class="aesthetic-windows-95-modal-title-bar-controls"><div class="aesthetic-windows-95-button-title-bar"><button>X</button></div></div></div><div class="aesthetic-windows-95-modal-content container">
+
+<!--START WRITTING HERE-->
+<div>
+<ul>
+    <li>you can use lists</li>
+</ul>
+
+<ol>
+    <li>ordered lists</li>
+</ol>
+
+<p>or some paragraphs</p>
+</div>
+
+</div>
+</div>
+<!----/END---->
+
+<!----ASKBOX---->
+<div class="aesthetic-windows-95-modal askbox draggable"><div class="aesthetic-windows-95-modal-title-bar handle"><div class="aesthetic-windows-95-modal-title-bar-text header">{asklabel}</div><div class="aesthetic-windows-95-modal-title-bar-controls"><div class="aesthetic-windows-95-button-title-bar"><button>X</button></div></div></div><div class="aesthetic-windows-95-modal-content askcontent"><div><iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/{name}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe></div></div></div></main>
+<!----/END---->
+
+<!--SCRIPTS-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</script><script src="https://unpkg.com/draggabilly/dist/draggabilly.pkgd.min.js"></script>
+<script>
+$(document).ready(function(){
+  if ($(window).width() > 850) {$('.draggable').draggabilly({handle:'.handle'});};
+  $(window).on('resize', function(){
+    if ($(window).width() < 850) {$('.draggable').draggabilly('destroy')}
+    else {$('.draggable').draggabilly({handle:'.handle'});}
+  });
+  $('body').find('b').each(function(){$('b').addClass('aesthetic-font-modifier-gradient-purple-blue');});
+  $('.navigation').append('<li class="header-link credit"><a href="//aurthms.tumblr.com">Credit</a></li>');
+  $('#links').click(function(){
+    $('#links').addClass('active');
+    $('#about').removeClass('active');
+    $('#faq').removeClass('active');
+    $('.nav').addClass('show');
+    $('.abt').removeClass('show');
+    $('.askd').removeClass('show');
+  });
+  $('#about').click(function(){
+    $('#about').addClass('active');
+    $('#links').removeClass('active');
+    $('#faq').removeClass('active');
+    $('.abt').addClass('show');
+    $('.nav').removeClass('show');
+    $('.askd').removeClass('show');
+  });
+  $('#faq').click(function(){
+    $('#faq').addClass('active');
+    $('#links').removeClass('active');
+    $('#about').removeClass('active');
+    $('.askd').addClass('show');
+    $('.nav').removeClass('show');
+    $('.abt').removeClass('show');
+  });
+});
+</script>
+
+</body>
+</html>
