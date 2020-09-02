@@ -202,7 +202,6 @@ ul li:before {
     margin: 0;
 }
 
-.audio-media,
 .audio-media iframe.tumblr_audio_player {
     height: 85px !important;
 }
