@@ -35,5 +35,5 @@ Updates
 
 <p>
 full credits at: 
-<a href="https://aurthms.tumblr.com/credits" rel="nofollow">aurthms/credits</a>
+<a href="//aurthms.tumblr.com/credits" rel="nofollow">aurthms/credits</a>
 </p>
