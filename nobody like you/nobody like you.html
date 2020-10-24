@@ -6,7 +6,7 @@
 
 <!--
 
-    theme:      nobody like you
+    theme:      hurricane
     version:    2.0 (October 23, 2020)
     made by:    aurthms
 
@@ -737,6 +737,55 @@ ol.notes li.note.more_notes_link_container{
     text-align:left!important;
 }
 
+/*pagination*/
+
+footer{
+    margin-top:auto;
+    width:100%;
+}
+
+.pagination{
+    display:block;
+    width:100%;
+    margin:0;
+    padding:calc({select:post spacing}px / 2) 0;
+    text-align:right;
+    position:relative;
+}
+
+.pagination a{
+    opacity:0.5;
+    text-decoration:none;
+    color:{color:text};
+}
+
+.pagination a{
+    display:inline-block;
+    margin-right:1.2em;
+    position:relative;
+}
+
+.pagination a:last-of-type{
+    margin-right:0;
+}
+
+.pagination a.active{
+    opacity:1;
+}
+
+.pagination a.active:hover{
+    color:{color:link};
+}
+
+.pagination a.next:after{
+    content:'\2192';
+    margin-left:5px;
+}
+.pagination a.prev:before{
+    content:'\2190';
+    margin-right:5px;
+}
+
 @media (max-width:850px){
 
 main{
@@ -1154,7 +1203,17 @@ aside, section{
 {/block:Posts}
 </section>
 
-<footer></footer>
+<footer>
+{block:pagination}
+<div class="pagination">
+<a {block:PreviousPage}class="active prev" href="{previouspage}"{/block:PreviousPage}>
+{lang:prev}
+</a><a {block:nextPage}class="active next" href="{nextpage}"{/block:nextPage}>
+{lang:next}
+</a>
+</div>
+{/block:pagination}
+</footer>
 </main>
 <!-- scripts -->
 
@@ -1266,7 +1325,6 @@ $(document).ready(function() {
     theme:'tooltipster-noir',
     plugins:["follower"],
     maxWidth:160,
-    anchor:'top-left',
     offset:[0, -20],
     arrow:false,
     animationDuration:300,
