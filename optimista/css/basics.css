@@ -1,0 +1,239 @@
+/* tumblr controls */
+
+iframe.tmblr-iframe {
+    z-index: 99999999999999 !important;
+    transform: scale(0.8, 0.8);
+    transform-origin: right top;
+    -webkit-transform: scale(0.8, 0.8);
+    -webkit-transform-origin: right top;
+    -o-transform: scale(0.8, 0.8);
+    -o-transform-origin: right top;
+    -moz-transform: scale(0.8, 0.8);
+    -moz-transform-origin: right top;
+    -ms-transform: scale(0.8, 0.8);
+    -ms-transform-origin: right top;
+}
+
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+    width: 100% !important;
+}
+
+.iframe-controls--phone-mobile,
+.tmblr-iframe--app-cta-button,
+.tmblr-iframe:not(#new-tumblr-controls) {
+    visibility: hidden !important;
+    display: none !important;
+}
+
+.iframe-container,
+iframe#new-tumblr-controls {
+    position: absolute;
+    top: 0;
+    left: -12%;
+    height: 45px;
+    width: 112% !important;
+    background: rgb(var(--bgcolor));
+    z-index: 10;
+}
+
+/* html */
+
+html {
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    hing: grayscale;
+
+}
+
+body {
+    margin: 0 !important;
+    line-height: 1.8em !important;
+    letter-spacing: 0.4px;
+    word-wrap: break-word;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* link */
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-decoration: none;
+    -moz-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+/* text */
+
+pre,
+code {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    font: 0.9em monospace !important;
+}
+
+blockquote {
+    margin: 5px 0;
+    padding: 0;
+    padding-left: 1em;
+    border-left: 1px solid rgb(var(--textborders));
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-size: 1.2em;
+    font-weight: var(--boldfont);
+    color: rgb(var(--titles));
+}
+
+small,
+sub,
+sup {
+    font-size: 0.9em;
+    vertical-align: baseline;
+}
+
+b,
+strong {
+    font-weight: var(--boldfont);
+    color: rgb(var(--titles));
+
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+/* lists */
+
+ol,
+ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+ol li,
+ul li {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 1.5em;
+}
+
+ol li {
+    counter-increment: list;
+}
+
+ol li:before,
+ul li:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+ol li:before {
+    content: counter(list, lower-alpha) '.';
+}
+
+ul li:before {
+    content: '';
+    background-color: rgb(var(--textcolor));
+    width: 0.9em;
+    height: 1px;
+    top: calc((var(--fontsize) / 2) + 4px);
+}
+
+/* lightbox */
+
+#tumblr_lightbox,
+.tmblr-lightbox {
+    background-color: rgba(var(--lightboxbg), 0.85) !important;
+}
+
+#vignette,
+.vignette,
+.lightbox-caption {
+    opacity: 0 !important;
+}
+
+.lightbox-image,
+#tumblr_lightbox img {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: 1.6em solid rgb(var(--lightboxborder)) !important;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* media */
+
+#media {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#media img,
+.tmblr-full img {
+    width: 100%;
+    display: block;
+}
+
+/* photosets */
+
+[photoset-layout] {
+    grid-gap: var(--NPF-Image-Spacing);
+}
+
+[photoset-layout] div {
+    cursor: pointer;
+}
+
+.npf_row {
+    display: flex !important;
+    margin: calc(var(--NPF-Image-Spacing) / -2) !important;
+    margin-bottom: calc(var(--NPF-Image-Spacing) / 2) !important;
+    overflow:hidden;
+}
+
+.npf_row:last-of-type {
+    margin-bottom: calc(var(--NPF-Image-Spacing) / -2) !important;
+}
+
+.tmblr-full {
+    flex: 1;
+    margin: 0 !important;
+    padding: calc(var(--NPF-Image-Spacing) / 2) !important;
+    width: auto !important;
+    height: auto !important;
+    outline: none !important;
+}
+
+/* video */
+
+.video * {
+    display: block;
+    min-width: 100%;
+}
