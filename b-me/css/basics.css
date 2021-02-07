@@ -65,12 +65,15 @@ code {
     white-space: -o-pre-wrap;
     word-wrap: break-word;
     font: 0.9em monospace !important;
+    line-height: 1.8em !important;
+    letter-spacing: 0.4px !important;
+    word-wrap: break-word !important;
 }
 
 blockquote {
-    margin-left: 0;
+    margin-left: 5px;
     padding-left: 15px;
-    border-left: 1px solid rgb(var(--textborders));
+    border-left: 1px solid rgb(var(--textborder));
 }
 
 h1,
@@ -81,10 +84,14 @@ h4 {
     font-weight: var(--boldfont);
 }
 
+p:last-of-type {
+    margin-bottom: 0;
+}
+
 small,
 sub,
 sup {
-    font-size: 12px;
+    font-size: 0.9em;
     vertical-align: baseline;
 }
 
@@ -112,11 +119,15 @@ ol li,
 ul li {
     position: relative;
     margin: 0;
-    padding: 0 0 0 17px;
+    padding: 0 0 0 1.5em;
 }
 
 ol li {
     counter-increment: list;
+}
+
+ul li {
+    padding-left: 1.2em;
 }
 
 ol li:before,
@@ -128,21 +139,21 @@ ul li:before {
 
 ol li:before {
     content: counter(list, lower-alpha) '.';
-    margin-top: calc(var(--fontsize) - 11px);
-    font-size: 11px;
 }
 
 ul li:before {
-    content: '\ea6b';
-    margin-top: calc((var(--fontsize) / 2) - 3px);
-    font: 11px 'remixicon';
+    content: '';
+    background-color: rgb(var(--textcolor));
+    width: 6px;
+    height: 1px;
+    top: calc((var(--fontsize) / 2) + 4px);
 }
 
 /* lightbox */
 
 #tumblr_lightbox,
 .tmblr-lightbox {
-    background-color: rgba(var(--lightboxbg), 0.95) !important;
+    background-color: rgba(var(--lightboxbg), 0.85) !important;
 }
 
 #vignette,
@@ -153,11 +164,11 @@ ul li:before {
 
 .lightbox-image,
 #tumblr_lightbox img {
-    border: 20px solid rgba(var(--lightboxborders), 1) !important;
-    border-radius: 0 !important;
-    box-shadow: 10px 10px 0 0 rgba(var(--lightboxshadow), 0.65) !important;
-    box-sizing: border-box !important;
+    box-shadow: none !important;
+    border-radius: 0.3em !important;
+    border: 0 !important;
 }
+
 
 /* media */
 
@@ -166,10 +177,11 @@ ul li:before {
     width: 100%;
     margin: 0;
     padding: 0;
+    border-radius: var(--content-rounded-corners) !important;
+    overflow: hidden;
 }
 
-.photo img,
-.tmblr-full img {
+.photo img {
     width: 100%;
     display: block;
 }
@@ -186,25 +198,23 @@ ul li:before {
     cursor: pointer;
 }
 
-.npf_row {
-    display: flex !important;
-    margin: calc(var(--NPF-Image-Spacing) / -2) !important;
-    margin-bottom: calc(var(--NPF-Image-Spacing) / 2) !important;
+.npf_row,
+.npf_inst {
     border-radius: var(--content-rounded-corners) !important;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.npf_row:last-of-type {
-    margin-bottom: calc(var(--NPF-Image-Spacing) / -2) !important;
+/*audio*/
+
+.audio-media iframe {
+    width: 100% !important;
+    margin: 0;
+    border-radius: var(--content-rounded-corners) !important;
+    overflow: hidden;
 }
 
-.tmblr-full {
-    flex: 1;
-    margin: 0 !important;
-    padding: calc(var(--NPF-Image-Spacing) / 2) !important;
-    width: auto !important;
-    height: auto !important;
-    outline: none !important;
+.audio-media iframe.tumblr_audio_player {
+    height: 85px !important;
 }
 
 /* video */
@@ -212,6 +222,8 @@ ul li:before {
 .video * {
     display: block;
     min-width: 100%;
+    border-radius: var(--content-rounded-corners) !important;
+    overflow: hidden;
 }
 
 /* credit */
@@ -220,6 +232,7 @@ ul li:before {
     background-color: rgb(var(--bgcolor));
     user-select: none;
     text-decoration: none;
+    color: {color:text};
     position: fixed;
     z-index: 99999999999 !important;
     right: 1em;
