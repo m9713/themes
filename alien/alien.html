@@ -535,6 +535,16 @@ nav{
     z-index:9;
 }
 
+.sidebar__inner{
+    display:block;
+    width:100%;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    position:relative;
+}
+
 .portrait{
     display:inline-block;
     width:48px;
@@ -1476,6 +1486,12 @@ aside{
     width:{select:sidebar width}px;
 }
 
+.sidebar__inner{
+    background-color:{color:background};
+    padding:16px;
+    border-radius:var(--content-rounded-corners);
+}
+
 nav{
     order:1;
     width:{select:navigation width}px;
@@ -1536,9 +1552,11 @@ footer{
 <main>
 
 <aside>
+<div class="sidebar__inner">
 <a class="title" href="/">{block:ifnotportraitimage}<img src="{portraiturl-64}" class="portrait"/>{/block:ifnotportraitimage}{block:ifportraitimage}<img src="{image:portrait}" class="portrait"/>{/block:ifportraitimage} {title}</a>
 
 <div class="text">{description}</div>
+</div>
 </aside>
 
 <nav>
