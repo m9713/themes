@@ -56,6 +56,9 @@
 <meta name="color:header borders" content="#e6e6e6"/>
 <meta name="color:header content" content="#848484"/>
 
+<meta name="color:sidebar background" content="#fafafa"/>
+<meta name="color:sidebar content" content="#848484"/>
+
 <meta name="color:borders" content="#e6e6e6"/>
 <meta name="color:post background" content="#ffffff"/>
 <meta name="color:post accent" content="#D8BFD8"/>
@@ -254,6 +257,7 @@
 <meta name="if:search bar" content=""/>
 <meta name="if:archive link" content=""/>
 <meta name="if:random link" content=""/>
+<meta name="if:sidebar solid background" content=""/>
 <meta name="if:rounded corners" content=""/>
 
 <meta name="text:ask url" content="/ask"/>
@@ -1486,11 +1490,20 @@ aside{
     width:{select:sidebar width}px;
 }
 
+{block:ifsidebarsolidbackground}
 .sidebar__inner{
-    background-color:{color:background};
+    background-color:{color:sidebar background};
     padding:16px;
     border-radius:var(--content-rounded-corners);
+    color:{color:sidebar content};
 }
+
+.sidebar__inner a{
+    color:{color:sidebar content};
+    text-decoration:underline;
+}
+
+{/block:ifsidebarsolidbackground}
 
 nav{
     order:1;
