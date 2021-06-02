@@ -183,33 +183,10 @@ ul li:before {
 
 [photoset-layout] {
     grid-gap: var(--NPF-Image-Spacing);
-    border-radius: var(--content-rounded-corners) !important;
-    overflow: hidden;
 }
 
 [photoset-layout] div {
     cursor: pointer;
-}
-
-.npf_row {
-    display: flex !important;
-    margin: calc(var(--NPF-Image-Spacing) / -2) !important;
-    margin-bottom: calc(var(--NPF-Image-Spacing) / 2) !important;
-    border-radius: var(--content-rounded-corners) !important;
-    overflow:hidden;
-}
-
-.npf_row:last-of-type {
-    margin-bottom: calc(var(--NPF-Image-Spacing) / -2) !important;
-}
-
-.tmblr-full {
-    flex: 1;
-    margin: 0 !important;
-    padding: calc(var(--NPF-Image-Spacing) / 2) !important;
-    width: auto !important;
-    height: auto !important;
-    outline: none !important;
 }
 
 /* audio */
