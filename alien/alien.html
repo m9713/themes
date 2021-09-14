@@ -237,6 +237,15 @@
 <meta name="select:sidebar width" title="250px" content="250"/>
 <meta name="select:sidebar width" title="260px" content="260"/>
 
+<meta name="select:sidebar background" title="transparent" content="none"/>
+<meta name="select:sidebar background" title="solid color" content="solid"/>
+<meta name="select:sidebar background" title="blured" content="blur"/>
+
+<meta name="select:sidebar background blur radius" title="2px" content="2"/>
+<meta name="select:sidebar background blur radius" title="4px" content="4"/>
+<meta name="select:sidebar background blur radius" title="8px" content="8"/>
+<meta name="select:sidebar background blur radius" title="16px" content="16"/>
+
 <meta name="select:post width" title="400px" content="400"/>
 <meta name="select:post width" title="450px" content="450"/>
 <meta name="select:post width" title="500px" content="500"/>
@@ -257,7 +266,6 @@
 <meta name="if:search bar" content=""/>
 <meta name="if:archive link" content=""/>
 <meta name="if:random link" content=""/>
-<meta name="if:sidebar solid background" content=""/>
 <meta name="if:rounded corners" content=""/>
 
 <meta name="text:ask url" content="/ask"/>
@@ -306,7 +314,11 @@
 --textborders:{RGBcolor:text borders};
 
 --lightboxbg:{RGBcolor:lightbox background};
---content-rounded-corners:{block:ifroundedcorners}5px{/block:ifroundedcorners}{block:ifnotroundedcorners}0{/block:ifnotroundedcorners};
+{block:ifroundedcorners}
+--content-rounded-corners:5px;
+{/block:ifroundedcorners}{block:ifnotroundedcorners}
+--content-rounded-corners:0;
+{/block:ifnotroundedcorners}
 --NPF-Bottom-Gap-From-Captions:1em;
 --NPF-Image-Spacing:{select:photoset gutter}px;
 }
@@ -568,8 +580,8 @@ aside .text{
 nav a{
     background-color:{color:post background};
     display:inline-block;
-    width:calc(({select:navigation width}px - 5px) / 2);
-    height:calc(({select:navigation width}px - 5px) / 2);
+    width:calc(({select:navigation width}px - 10px) / 2);
+    height:calc(({select:navigation width}px - 10px) / 2);
     overflow:hidden;
     vertical-align:top;
     margin:0 5px 5px 0;
@@ -1490,20 +1502,25 @@ aside{
     width:{select:sidebar width}px;
 }
 
-{block:ifsidebarsolidbackground}
-.sidebar__inner{
-    background-color:{color:sidebar background};
+.sidebar__inner.background-solid,
+.sidebar__inner.background-blur{
     padding:16px;
     border-radius:var(--content-rounded-corners);
+}
+
+.sidebar__inner.background-solid{
+    background-color:{color:sidebar background};
     color:{color:sidebar content};
 }
 
-.sidebar__inner a:not(.title){
+.sidebar__inner.background-solid a:not(.title){
     color:{color:sidebar content};
     text-decoration:underline;
 }
 
-{/block:ifsidebarsolidbackground}
+.sidebar__inner.background-blur{
+    backdrop-filter: blur({select:sidebar background blur radius}px)
+}
 
 nav{
     order:1;
@@ -1565,7 +1582,7 @@ footer{
 <main>
 
 <aside>
-<div class="sidebar__inner">
+<div class="sidebar__inner background-{select:sidebar background}">
 <a class="title" href="/">{block:ifnotportraitimage}<img src="{portraiturl-64}" class="portrait"/>{/block:ifnotportraitimage}{block:ifportraitimage}<img src="{image:portrait}" class="portrait"/>{/block:ifportraitimage} {title}</a>
 
 <div class="text">{description}</div>
